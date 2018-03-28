@@ -11,9 +11,13 @@ public class TestView implements Serializable {
     
     private String testString;
     
+    private String name;
+    
+    private String expected;
+    
     @PostConstruct  
     public void init() {
-        testString = "Welcome to PrimeFaces!!!";
+        testString = "Keyboard: Unicode Character does not support at p:keyboard in attribute layoutTemplate #3487!!!";
     }
 
     public String getTestString() {
@@ -22,5 +26,22 @@ public class TestView implements Serializable {
 
     public void setTestString(String testString) {
         this.testString = testString;
-    }    
+    }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getExpected() {
+		return expected;
+	}
+
+	public void setExpected(String expected) {
+		this.expected = expected;
+	}
+    
 }

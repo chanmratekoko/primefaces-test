@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-    <h:head>   
-        <title>PrimeFaces Test</title>
-    </h:head>
-    <h:body>
-        
-        <h1>#{testView.testString}</h1>
-        
-    </h:body>
+<h:head>
+	<title>PrimeFaces Test</title>
+</h:head>
+<h:body>
+
+	<h1>#{testView.testString}</h1>
+
+	<p:outputLabel value="Error" for="name" />
+	<!-- Not working code -->
+	<p:keyboard id="name"
+		readonly="#{facesContext.currentPhaseId.ordinal eq 6}"
+		layoutTemplate="\u1041\u1042\u1043-back,\u1044\u1045\u1046-clear,\u1047\u1048\u1049-close,\u1040"
+		value="#{testView.name}" maxlength="10" />
+		
+	<br/>
+
+	<p:outputLabel value="Expected" for="expected" />
+	<!-- working code -->
+	<p:keyboard id="expected"
+		readonly="#{facesContext.currentPhaseId.ordinal eq 6}"
+		layoutTemplate="၁၂၃-back,၄၅၆-clear,၇၈၉-close,၀"
+		value="#{testView.expected}" maxlength="10" />
+
+</h:body>
 </html>
